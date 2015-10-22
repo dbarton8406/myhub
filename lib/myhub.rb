@@ -12,20 +12,30 @@ module Myhub
     # Your code here ...
     get "/" do
       api = Github.new
-      # get stuff from github
-      erb :index, locals: { issues: stuff }
+      issues =api.get_issues
+      issues =[]
+      issues.map do |issue|
+      info = {
+          title: issue["title"],
+          url: issue["url"],
+          number: issue["number"],
+          state: issue["state"]
+        }
+        
+      end
+      erb :index, locals: { issues: api.get_issues}
     end
 
-    put "/issue/:id" do
+    post "/issue/reopen/:id" do
       api = Github.new
-      api.reopen_issue(params["id"].to_i)
-      "Cool cool cool"
+      api.reopen_issue("TIY-ATL-ROR-2015-Sep", "assignments", params["id"].to_i)
+      "This will reopen issue"
     end
 
-    delete "/issue/:id" do
+    post "/issue/delete/:id" do
       api = Github.new
-      api.close_issue(params["id"].to_i)
-      "Cool cool cool"
+      api.close_issue("TIY-ATL-ROR-2015-Sep","assignments", params["id"].to_i)
+      "This will close issue"
     end
 
     run! if app_file == $0
