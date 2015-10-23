@@ -9,33 +9,24 @@ module Myhub
   class App < Sinatra::Base
     set :logging, true
 
+
     # Your code here ...
     get "/" do
       api = Github.new
-      issues =api.get_issues
-      issues =[]
-      issues.map do |issue|
-      info = {
-          title: issue["title"],
-          url: issue["url"],
-          number: issue["number"],
-          state: issue["state"]
-        }
-        
-      end
-      erb :index, locals: { issues: api.get_issues}
+      issue = api.get_issues
+      erb :index, locals: { issues: issue}
     end
 
     post "/issue/reopen/:id" do
       api = Github.new
-      api.reopen_issue("TIY-ATL-ROR-2015-Sep", "assignments", params["id"].to_i)
-      "This will reopen issue"
+      api.reopen_issue( params["id"].to_i)
+      redirect "/"
     end
 
-    post "/issue/delete/:id" do
+    post "/issue/close/:id" do
       api = Github.new
-      api.close_issue("TIY-ATL-ROR-2015-Sep","assignments", params["id"].to_i)
-      "This will close issue"
+      api.close_issue(params["id"].to_i)
+      redirect "/"
     end
 
     run! if app_file == $0

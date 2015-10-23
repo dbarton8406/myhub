@@ -3,9 +3,57 @@
   <head>
     <title>Issue kidding me</title>
     <link rel="stylesheet" href="main.css">
-  </head>
   <body>
+  </style>
   <h1>Git had a cold so I gave it a issue</h1>
-  </body>
-  <img> src= "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT_oUqxhXmscji5pfxftl_XxJ_rZI0w9-uM1nGMPGKBTkA-_ClmUw"/>
-  
+  <h2>Is shu open? || Is shu closed?</h2>
+<p> if you want to reopen push reopen button</p>
+<p> if you want to close push close button </p>
+<ul>
+  <%issues.each do |issue|%>
+        <% if issue[:state] == "closed"
+             response = "reopen"
+           else
+             response = "close"
+           end
+        %>
+        <form action="/issue/<%= response %>/<%= issue[:id] %>" method="post">
+        <li>
+          <p>
+            Issue #<%= issue[:id] %>: <a href="<%= issue[:url] %>"><%= issue[:title] %></a>
+          </p>
+          <p>
+            Status: <%= issue[:state].capitalize %> <input type="Submit" class="<%= response %>" value="<%= response.capitalize %>">
+          </p>
+        </li>
+        </form>
+    <% end %>
+  </ul>
+
+</body>
+</head>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
