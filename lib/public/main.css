@@ -11,7 +11,6 @@ html {
 		url('http://www.augstudy.com/images/theme/impress/bg_mountains.png'),
 		url('http://i.imgur.com/58PlA6F.png');
     background-size: cover;
-    -o-background
 	background-repeat: repeat-x;
 	background-position: 
 		0 20%,
@@ -41,24 +40,27 @@ html {
 
 
 h1 {
+	color:#163E3F;
     text-align: center;
-    opacity: 0.5;
+    opacity: 0.75;
     text-transform: uppercase;
     text-shadow: 2px 2px #66C2E0;
     text-indent: 200px;
 }
 
 h2{
+	color:##163E3F;
 	t-align: center;
-    opacity: 0.5;
+    opacity: 0.75;
     text-transform: uppercase;
     text-shadow: 2px 2px #66C2E0;
     text-indent: 400px;
 } 
 
 h4 {
+	color:##212320;
     t-align: center;
-    opacity: 0.5;
+    opacity: 0.75;
     text-transform: uppercase;
     text-shadow: 2px 2px #66C2E0;
     text-indent: 200px;
@@ -94,8 +96,8 @@ input.reopen {
     text-decoration:none;
 	background-color: #FF0000;
 	box-shadow: 0 0 3px #FA5858;
-    font-size:7px;
-    text-shadow: 2px 2px #610B0B;
+    font-size:9px;
+    text-shadow: 1px 1px #610B0B;
   }
 
   input.reopen:hover {
@@ -116,8 +118,8 @@ input.close {
     text-decoration:none;
 	background-color: #64FE2E;
 	box-shadow: 0 0 3px #01DF01;
-    font-size:7px;
-    text-shadow: 2px 2px #21610B;    
+    font-size:9px;
+    text-shadow: 1px 1px #21610B;    
 }
 
  input.close:hover {
@@ -139,7 +141,17 @@ ul
 }
 
 a {
-	color:#088A68;	
+	
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: -webkit-gradient(linear,  left top,  left bottom, 
+        color-stop(0.00, red), 
+        color-stop(16%, orange),
+        color-stop(32%, yellow),
+        color-stop(48%, green),
+        color-stop(60%, blue),
+        color-stop(76%, indigo),
+        color-stop(1.00, violet));	
 }
 
 

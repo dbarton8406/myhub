@@ -13,13 +13,13 @@ module Myhub
     end
     def get_issues
       issues = self.class.get("/orgs/TIY-ATL-ROR-2015-Sep/issues",
-      				 headers: @headers, query: { state: "all"})
-      
-      puts issues
-      issues.map { |issue| {id: issue["number"],
-      	                    title: issue["title"],
-                            url: issue["html_url"],
-                            state: issue["state"]} }
+                              headers: @headers, query: { state: "all"})
+
+      # puts issues -"this was added to erb "
+      # issues.map { |issue| {id: issue["number"],
+      #                       title: issue["title"],
+      #                       url: issue["html_url"],
+      #                       state: issue["state"]} }
     end
 
     def reopen_issue(number)
