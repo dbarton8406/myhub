@@ -1,41 +1,35 @@
-# Myhub
+Description
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/myhub`. To experiment with that code, run `bin/console` for an interactive prompt.
+Complete a sinatra app for displaying github issues assigned to you as described here.
+myhub
+Description
 
-TODO: Delete this and the text above, and describe your gem
+Make a basic interface to your open issues on the class "assignments" github repo.
 
-## Installation
+Accessing the site root should display the github issues assigned to you along with a button to toggle whether they are open or closed.
 
-Add this line to your application's Gemfile:
+Objectives
 
-```ruby
-gem 'myhub'
-```
+Learning Objectives
 
-And then execute:
+After completing this, you should ...
 
-    $ bundle
+Be comfortable integrating information from an external API into your controllers
+Be able to build a basic form
+Understand the place of views in a web app
+Performance Objectives
 
-Or install it yourself as:
-
-    $ gem install myhub
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/myhub. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
+Be able to use forms to make requests in the browser
+Understand how to use ERB templates
+Details
 
 
-## License
+Requirements
 
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+Add wrappers for any needed Github API calls to the lib/myhub/github.rb class.
 
+Use your Github API wrapper to retrieve issues assigned to you from the assignments repo.
+
+Make a request for the homepage (GET '/') retrieve your issues and pass the to an ERB template for display.
+
+The template should include a button to close or reopen each issue, based on its present state.
