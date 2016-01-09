@@ -9,6 +9,8 @@ Make a basic interface to your open issues on github repo.
 
 Accessing the site root should display the github issues assigned to you along with a button to toggle whether they are open or closed.
 
+You will need a _github Access Token_.
+
 ##Objectives##
 
 After completing this, you should ...
