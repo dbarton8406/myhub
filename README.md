@@ -2,7 +2,7 @@
 
 ##Description##
 
-Complete a sinatra app for displaying github issues assigned to you as described here.
+A sinatra app for displaying github issues assigned to you as described here.
 myhub
 
 Make a basic interface to your open issues on github repo.
@@ -13,16 +13,16 @@ You will need a _github Access Token_.
 
 ##Objectives##
 
-After completing this, you should ...
 
 Be comfortable integrating information from an external API into your controllers
 Be able to build a basic form
 Understand the place of views in a web app
-Performance Objectives
+
+##Performance Objectives##
 
 Be able to use forms to make requests in the browser
 Understand how to use *ERB* templates
-Details
+
 
 
 ##Requirements##
